@@ -69,6 +69,10 @@ flutter:
     - lib/images/logo22.jpeg
     - lib/images/hbk.jpeg
     - lib/images/bk4.jpeg
+    - lib/images/c1.jpeg
+    - lib/images/c2.jpeg
+    - lib/images/o.jpeg
+    - lib/images/food.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -46,7 +46,14 @@ class Employee extends StatelessWidget {
               'CYPRUS AIRLINES',
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
-            SizedBox(height: 18.0),
+            SizedBox(height: 10.0),
+            Text(
+              'Manager Log in',
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
