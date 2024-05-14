@@ -16,21 +16,21 @@ class LoginPage extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('lib/images/bk.jpeg'),
+              image: AssetImage('lib/images/bkk.jpeg'),
               fit: BoxFit.cover,
             ),
           ),
         ),
         Container(
-          color: Colors.black.withOpacity(0.6),
+          color: Colors.black.withOpacity(0.4),
         ),
         Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(25.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: 250,
+                height: 15,
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(30),

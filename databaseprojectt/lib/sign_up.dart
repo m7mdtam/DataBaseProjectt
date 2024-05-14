@@ -29,21 +29,21 @@ class _SignUpState extends State<SignUp> {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('lib/images/bk.jpeg'),
+              image: AssetImage('lib/images/bkk.jpeg'),
               fit: BoxFit.cover,
             ),
           ),
         ),
         Container(
-          color: Colors.black.withOpacity(0.7),
+          color: Colors.black.withOpacity(0.5),
         ),
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100,
+                height: 20,
               ),
               TextFormField(
                 style: TextStyle(color: Colors.white),
