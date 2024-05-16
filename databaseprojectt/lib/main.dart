@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 import 'package:databaseprojectt/sign_up.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:databaseprojectt/home_page.dart';
 import 'package:flutter/material.dart';

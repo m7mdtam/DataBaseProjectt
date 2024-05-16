@@ -3,6 +3,7 @@
 import 'package:databaseprojectt/employee_page.dart';
 import 'package:databaseprojectt/home_page.dart';
 import 'package:databaseprojectt/sign_up.dart';
+import 'package:databaseprojectt/booking_page.dart';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
@@ -95,7 +96,10 @@ class LoginPage extends StatelessWidget {
                       foregroundColor: MaterialStateProperty.all<Color>(
                           const Color.fromARGB(255, 0, 0, 0)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => FlightBookingPage()));
+                    },
                     child: Text('Login'),
                   ),
                 ],

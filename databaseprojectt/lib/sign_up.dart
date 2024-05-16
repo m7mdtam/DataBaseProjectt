@@ -1,8 +1,13 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors_in_immutables, depend_on_referenced_packages, unused_local_variable, avoid_print, non_constant_identifier_names, unused_import, prefer_interpolation_to_compose_strings
+
+import 'dart:convert';
+import 'dart:core';
 
 import 'package:databaseprojectt/home_page.dart';
 import 'package:databaseprojectt/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:databaseprojectt/constants.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({super.key});
@@ -15,12 +20,32 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _firstNameController = TextEditingController();
 
   final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _dobController = TextEditingController();
 
   final TextEditingController _sexController = TextEditingController();
+
+  void AddData() async {
+    var name = _firstNameController.text;
+    var email = _emailController.text;
+    var password = _passwordController.text;
+    http.Response response = await http.post(
+      Uri.parse(endpoint + "signup.php"),
+      body: json.encode(
+        {"name": name, "email": email, "password": password},
+      ),
+    );
+    if (response.statusCode == 200) {
+      var body = jsonDecode(response.body);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('message'),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,49 +65,27 @@ class _SignUpState extends State<SignUp> {
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 20,
               ),
               TextFormField(
                 style: TextStyle(color: Colors.white),
-                validator: (String? value) {
-                  return (value == null) ? 'Please Enter your name.' : null;
-                },
                 controller: _firstNameController,
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.person,
                     color: Colors.white,
                   ),
-                  labelText: 'First Name',
+                  labelText: ' Name',
                   labelStyle: TextStyle(color: Colors.white),
                 ),
               ),
               SizedBox(height: 14.0),
-              TextFormField(
-                  style: TextStyle(color: Colors.white),
-                  controller: _lastNameController,
-                  decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.person,
-                      color: Colors.white,
-                    ),
-                    labelText: 'Last Name',
-                    labelStyle: TextStyle(color: Colors.white),
-                  ),
-                  validator: (String? value) {
-                    return (value == null)
-                        ? 'Please Enter your last name.'
-                        : null;
-                  }),
               SizedBox(height: 14.0),
               TextFormField(
                 style: TextStyle(color: Colors.white),
-                validator: (String? value) {
-                  return (value == null) ? 'Please Enter your Email.' : null;
-                },
                 controller: _emailController,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -96,10 +99,7 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 14.0),
               TextFormField(
                 style: TextStyle(color: Colors.white),
-                validator: (String? value) {
-                  return (value == null) ? 'Please Enter your password.' : null;
-                },
-                controller: _sexController,
+                controller: _passwordController,
                 decoration: InputDecoration(
                   icon: Icon(
                     Icons.lock,
@@ -109,40 +109,6 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(color: Colors.white),
                 ),
                 obscureText: true,
-              ),
-              SizedBox(height: 14.0),
-              TextFormField(
-                style: TextStyle(color: Colors.white),
-                validator: (String? value) {
-                  return (value == null)
-                      ? 'Please Enter your date of birth.'
-                      : null;
-                },
-                controller: _dobController,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.date_range_rounded,
-                    color: Colors.white,
-                  ),
-                  labelText: 'Date of Birth',
-                  labelStyle: TextStyle(color: Colors.white),
-                ),
-              ),
-              SizedBox(height: 14.0),
-              TextFormField(
-                style: TextStyle(color: Colors.white),
-                validator: (String? value) {
-                  return (value == null) ? 'Please Enter your sex.' : null;
-                },
-                controller: _sexController,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.female,
-                    color: Colors.white,
-                  ),
-                  labelText: 'Sex',
-                  labelStyle: TextStyle(color: Colors.white),
-                ),
               ),
               SizedBox(height: 14.0),
               Row(
@@ -160,7 +126,9 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(width: 7.0),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AddData();
+                    },
                     child: Text(
                       'Sign Up',
                       style: TextStyle(color: Colors.black, fontSize: 20),
