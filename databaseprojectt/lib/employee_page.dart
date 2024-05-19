@@ -1,11 +1,17 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:databaseprojectt/home_page.dart';
+import 'package:databaseprojectt/managing_tickets.dart';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 
-class Employee extends StatelessWidget {
+class Employee extends StatefulWidget {
+  @override
+  State<Employee> createState() => _EmployeeState();
+}
+
+class _EmployeeState extends State<Employee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +105,10 @@ class Employee extends StatelessWidget {
                     foregroundColor: MaterialStateProperty.all<Color>(
                         const Color.fromARGB(255, 0, 0, 0)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Managing()));
+                  },
                   child: Text('Login'),
                 ),
               ],
