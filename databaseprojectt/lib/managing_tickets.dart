@@ -81,7 +81,7 @@ class _FlightBookingPageState extends State<Managing> {
                           ),
                           onPressed: () {
                             setState(() {
-                              tickets.removeAt(index);
+                              _confirmDelete(context, index);
                             });
                           },
                         ),
@@ -94,6 +94,53 @@ class _FlightBookingPageState extends State<Managing> {
           ),
         ],
       ),
+    );
+  }
+
+  void _confirmDelete(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Confirm Deletion',
+            style: TextStyle(fontSize: 30),
+          ),
+          content: Text(
+            'Are you sure you want to delete this ticket?!',
+            style: TextStyle(fontSize: 20),
+          ),
+          actions: [
+            OutlinedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                'No',
+                style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                setState(() {
+                  tickets.removeAt(index);
+                });
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                'Yes',
+                style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -119,11 +166,11 @@ class _FlightBookingPageState extends State<Managing> {
             children: [
               TextField(
                 controller: originController,
-                decoration: InputDecoration(labelText: 'Origin City'),
+                decoration: InputDecoration(labelText: 'Origin Airport'),
               ),
               TextField(
                 controller: destinationController,
-                decoration: InputDecoration(labelText: 'Destination City'),
+                decoration: InputDecoration(labelText: 'Destination Airport'),
               ),
               TextField(
                 controller: departureTimeController,
@@ -185,11 +232,11 @@ class _FlightBookingPageState extends State<Managing> {
             children: [
               TextField(
                 controller: originController,
-                decoration: InputDecoration(labelText: 'Origin City'),
+                decoration: InputDecoration(labelText: 'Origin Airport'),
               ),
               TextField(
                 controller: destinationController,
-                decoration: InputDecoration(labelText: 'Destination City'),
+                decoration: InputDecoration(labelText: 'Destination Airport'),
               ),
               TextField(
                 controller: departureTimeController,
