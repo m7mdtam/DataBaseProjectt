@@ -18,13 +18,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        leading: Icon(
+          Icons.local_airport,
+          color: Colors.white,
+        ),
         title: Text(
           'CYPRUS AIRLINES',
           style: TextStyle(
-              fontSize: 21, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         actions: [
-          ElevatedButton(
+          TextButton(
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => LoginPage()));
@@ -33,13 +37,14 @@ class _HomePageState extends State<HomePage> {
                 minimumSize: MaterialStateProperty.all(Size(7.2, 33.0)),
               ),
               child: Text(
-                'Sign in',
+                'Log in',
                 style: TextStyle(
-                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
                   fontSize: 16,
                 ),
               )),
-          ElevatedButton(
+          TextButton(
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => SignUp()));
@@ -49,7 +54,8 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'Sign up',
                 style: TextStyle(
-                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
                   fontSize: 16,
                 ),
               ))

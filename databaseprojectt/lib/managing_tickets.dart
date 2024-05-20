@@ -21,7 +21,7 @@ class _FlightBookingPageState extends State<Managing> {
             },
             icon: Icon(
               Icons.add,
-              color: Colors.white,
+              color: Colors.amber,
               size: 30,
             ),
           )
@@ -63,7 +63,7 @@ class _FlightBookingPageState extends State<Managing> {
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 83, 94, 11)),
+                              color: const Color.fromARGB(255, 151, 114, 3)),
                         ),
                         IconButton(
                           icon: Icon(

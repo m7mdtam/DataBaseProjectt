@@ -19,7 +19,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final TextEditingController _firstNameController = TextEditingController();
 
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   final TextEditingController _emailController = TextEditingController();
@@ -83,6 +83,18 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               SizedBox(height: 14.0),
+              TextFormField(
+                style: TextStyle(color: Colors.white),
+                controller: _userNameController,
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.email,
+                    color: Colors.white,
+                  ),
+                  labelText: 'Username',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+              ),
               SizedBox(height: 14.0),
               TextFormField(
                 style: TextStyle(color: Colors.white),
