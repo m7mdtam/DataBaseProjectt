@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, unused_import, use_key_in_widget_constructors, library_private_types_in_public_api
 
+import 'package:databaseprojectt/flights_info.dart';
 import 'package:databaseprojectt/login_page.dart';
 import 'package:databaseprojectt/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -228,12 +229,8 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Implement booking logic here
-                      print('Origin City: $originCity');
-                      print('Destination City: $destinationCity');
-                      print('Departure Date: $departureDate');
-                      print('Return Date: $returnDate');
-                      print('Passengers: $passengersCount');
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => FlightListScreen()));
                     },
                     child: Text(
                       'Search',
