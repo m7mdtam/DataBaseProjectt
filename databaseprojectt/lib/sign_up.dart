@@ -24,7 +24,7 @@ class _SignUpState extends State<SignUp> {
 
   final TextEditingController _emailController = TextEditingController();
 
-  final TextEditingController _dobController = TextEditingController();
+  final TextEditingController _passportController = TextEditingController();
 
   final TextEditingController _sexController = TextEditingController();
 
@@ -121,6 +121,19 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(color: Colors.white),
                 ),
                 obscureText: true,
+              ),
+              SizedBox(height: 14.0),
+              TextFormField(
+                style: TextStyle(color: Colors.white),
+                controller: _passportController,
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.email,
+                    color: Colors.white,
+                  ),
+                  labelText: 'Passport',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
               ),
               SizedBox(height: 14.0),
               Row(

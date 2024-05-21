@@ -80,6 +80,10 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                 ],
               ),
               TextFormField(
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
                 onChanged: (value) {
                   originCity = value;
                 },
@@ -99,6 +103,10 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                 ],
               ),
               TextFormField(
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
                 onChanged: (value) {
                   originCity = value;
                 },
@@ -118,6 +126,10 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                 ],
               ),
               TextFormField(
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
                 onChanged: (value) {
                   destinationCity = value;
                 },
@@ -137,6 +149,10 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                 ],
               ),
               TextFormField(
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
                 onChanged: (value) {
                   originCity = value;
                 },
@@ -211,7 +227,7 @@ class _FlightBookingPageState extends State<FlightBookingPage> {
                   );
                 }).toList(),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 6),
               Row(
                 children: [
                   ElevatedButton(

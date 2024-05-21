@@ -10,8 +10,13 @@ class SeatSelectionScreen extends StatelessWidget {
   // Generate 100 seats in the format 1A, 1B, ..., 17E, 17F
   List<String> generateSeats() {
     List<String> seats = [];
-    const int numRows = 17; // 17 rows to get close to 100 seats
-    const List<String> seatLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const int numRows = 25; // 17 rows to get close to 100 seats
+    const List<String> seatLetters = [
+      'A',
+      'B',
+      'C',
+      'D',
+    ];
 
     for (int row = 1; row <= numRows; row++) {
       for (String letter in seatLetters) {
