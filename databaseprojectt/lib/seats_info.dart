@@ -1,3 +1,4 @@
+import 'package:databaseprojectt/payment_info.dart';
 import 'package:databaseprojectt/ticket_info.dart';
 import 'package:flutter/material.dart';
 import 'package:databaseprojectt/airport_info.dart';
@@ -68,7 +69,6 @@ class SeatSelectionScreen extends StatelessWidget {
                 String meal = mealController.text;
                 String baggageWeight = baggageController.text;
                 Navigator.of(context).pop();
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -78,6 +78,12 @@ class SeatSelectionScreen extends StatelessWidget {
                       meal: meal,
                       baggageWeight: baggageWeight,
                     ),
+                  ),
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentForm(),
                   ),
                 );
               },

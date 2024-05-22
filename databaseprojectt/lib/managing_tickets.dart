@@ -304,13 +304,13 @@ class _FlightBookingPageState extends State<Managing> {
               TextField(
                 controller: airportIdController,
                 decoration: InputDecoration(
-                  labelText: 'Enter Airport ID',
-                  fillColor: Colors.grey[200], // Fill color
-                  filled: true, // Enable fill color
-                  labelStyle: TextStyle(color: Colors.grey), // Label text color
-                  border: OutlineInputBorder(), // Border style
+                  labelText: 'Enter Airplane ID',
+                  fillColor: Colors.grey[200],
+                  filled: true,
+                  labelStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(),
                 ),
-                style: TextStyle(color: Colors.black), // Text color
+                style: TextStyle(color: Colors.black),
               ),
               SizedBox(height: 10),
               TextField(
